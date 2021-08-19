@@ -1,4 +1,4 @@
-# Singer Spec - Working Group
+# Singer Spec Working Group
 
 Working group for ongoing development and iteration of the Singer Spec, the de-facto protocol for open source data connectors.
 
