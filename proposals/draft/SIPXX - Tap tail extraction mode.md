@@ -37,6 +37,16 @@ Additionally, we should detail a standardized set of supporting options and thei
 
 To provide a consistent user experience for end-users, time unit based settings are suffixed with their expected unit of time (`_ms`). 
 
+### Which layer(s) of the Singer ecosystem does this proposal directly touch?
+
+Select all that apply:
+
+- [ ] Singer Specification - required capabilities and behaviors
+- [x] Singer Specification - optional capabilities and behaviors
+- [x] Singer best practices and other guidance
+- [ ] Singer Working Group - practices and procedures
+- [ ] Singer documentation (Other)
+
 ## Motivation
 > >
 
