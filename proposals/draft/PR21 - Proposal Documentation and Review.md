@@ -41,9 +41,11 @@ After the doc is created, start a new Discussion thread to request feedback. Cro
 
 The working group will pick 1-3 topics each month to review. Once selected for review, update the doc status to "Reviewing" and enter the comment-by-date deadline here in the form.
 
-#### Phase 5: Approval
+#### Phase 5: Approval or Non-Approval
 
 SIPs will be approved if consensus is gained from the majority of working group members - and if there are no "Strong No" votes from the working group leadership team.
+
+If the SIP is not approved, it will return to draft status and/or it may be replaced by a new or altered submission based on Working Group feedback.
 
 ------------------
 
@@ -63,47 +65,49 @@ In order to deliberate on and select specific changes to the Singer protocol and
 
 ### What problem does it solve?
 
-...
+The process provides a specific and actionable path to propose improvements to the Singer specification, documentation, and other community resources.
 
 ### Why is it needed?
 
-...
+Currently there is no established means for proposals to be incorporated back into the spec, and there is no specific process for those proposals to receive careful review and constructive feedback.
 
 ## Other Considerations
-> >
+
+1. We may want to incorporate into the process a set of rules for what is in or out of scope for this working group.
+2. We should plan for the process (or at least the proposal template) to evolve over time.
+
 ### Are there any downsides to this change?
 
-...
+None.
 
 ### Is the change backwards compatible?
 
-...
+N/A - Not applicable.
 
-### Which users are affected by the change?
+### How are Singer developers affected by the change (if applicable)?
 
-...
+Developers may receive guidance and/or provide feedback by reading and engaging with SIP documents through the draft, review, and approval process.
 
-### How are users affected by the change? (e.g. DB upgrade required?)
+### How are Singer users affected by the change? (e.g. DB upgrade required?)
 
-...
+Users over time should see more robust capabilities and more uniform behaviors across taps and targets.
 
-### Prototype Implementations
+### Prototype Implementations (if available)
 
-...(if applicable)...
+Not applicable.
 
 ### Future Plans
 
-...(if applicable)...
+Over a period of submissions, we likely will evolve this format and process based on learnings.
 
 ### Excluded Alternatives
 
-...(if applicable)...
+Not applicable.
 
 ### Acknowledgements 
 
-...(if applicable)...
+N/A
 
 ## What defines this SIP as "done"?
 
-...
-
+The process will be approved for use by the Working Group.
