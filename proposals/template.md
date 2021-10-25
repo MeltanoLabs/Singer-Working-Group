@@ -40,7 +40,7 @@ Select all that apply:
 - [ ] Singer Specification - required capabilities and behaviors
 - [ ] Singer Specification - optional capabilities and behaviors
 - [ ] Singer best practices and other guidance
-- [x] Singer Working Group - practices and procedures
+- [ ] Singer Working Group - practices and procedures
 - [ ] Singer documentation (Other)
 
 ### What problem does it solve?
