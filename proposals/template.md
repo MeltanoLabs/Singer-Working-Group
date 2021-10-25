@@ -33,6 +33,16 @@ Process:
 > >
 ...
 
+### Which layer(s) of the Singer ecosystem does this proposal directly touch?
+
+Select all that apply:
+
+- [ ] Singer Specification - required capabilities and behaviors
+- [ ] Singer Specification - optional capabilities and behaviors
+- [ ] Singer best practices and other guidance
+- [ ] Singer Working Group - practices and procedures
+- [ ] Singer documentation (Other)
+
 ### What problem does it solve?
 
 ...
