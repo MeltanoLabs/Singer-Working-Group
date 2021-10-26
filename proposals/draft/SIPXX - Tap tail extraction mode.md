@@ -20,7 +20,7 @@ There are no changes needed to the spec and it's possible to create and use a ta
 
 ### What specific change do you propose to make?
 
-The underlying mechanic (polling micro-batches, reading a streaming endpoint, etc) rests with the tap developer and is still based on the feature set and data source implementation details. However, we could support a standardized a boolean setting like `tail` that would cause taps to alter their behavior and begin to extract data from the source continuously. A tap would be expected to continue extracting data until its stopped or encounters errors. 
+The underlying mechanic (polling micro-batches, reading a streaming endpoint, etc) rests with the tap developer and is still based on the feature set and data source implementation details. However, we could support a standardized boolean setting like `tail` that would cause taps to alter their behavior and begin to extract data from the source continuously. A tap would be expected to continue extracting data until its stopped or encounters errors. 
 
 That is, the `tail` setting might alter a taps behavior such that: 
 
@@ -30,7 +30,7 @@ That is, the `tail` setting might alter a taps behavior such that:
 Additionally, we should detail a standardized set of supporting options and their expected behaviors for use with `tail` mode. 
 
 1. To honor resumption after a hard interrupt, a `state_message_min_interval_ms` setting should be established, with the expectation that this forces a state message to flush at least every x interval, for instance, assuming 1 or more records have been sent since the last STATE message. Tap developers may also want to tie this closely to commit intervals with their source (i.e. commit Kafka offsets to match) and should still document how this relates to deliverability semantics and guarantees. 
-2. For incremental streams, where polling is being used a `new_record_polling_interval_ms` setting should be established, with the expectation that this would be the interval used when polling for data. (i.e. sleeping for this interval in a polling loop) 
+2. Optionally, for incremental streams where polling is being used a `new_record_polling_interval_ms` setting should be established, with the expectation that this would be the interval used when polling for data. (i.e. sleeping for this interval in a polling loop) 
 3. Optionally, to keep non-incremental streams whole while running a tap in `tail` mode, a `max_full_table_age_seconds`  setting should be established, which would be expected to drive new extracts of streams pulled with `FULL_TABLE` after the set amount of time has elapsed. This may not be desirable in all scenarios. 
 4. `SIGTERM` signal use should be supported and expected to immediately trigger halting extraction and emitting a state message. After which the tap should exit cleanly. Again some users may also want to tie this to commit intervals with their data source - and tap developers should still provide guidance around data duplication and deliverability semantics.
 
@@ -75,7 +75,9 @@ This is backward compatible in the sense there's no actual change to the spec, b
 
 ### Which users are affected by the change?
 
-Tap developers are the only users directly affected since they would need to accommodate this mode of operation.
+Tap developers are the users primarily and directly affected since they would need to accommodate this mode of operation, but there is a second order impact for Target developers as well.
+
+Target developers may be affected in cases where the target implementation is reliant on "short lived" batch behavior. They may only be expecting to commit a single batch  and so are not proactively persisting records or finalizing writes until a tap has completed. That could result in unbounded transactions times, transactions timeouts, forced rollbacks, etc. To prevent this Target developers should implement a forced checkpoint/finalization of batch processing either for each STATE message received or after a given elapsed time window has passed. Target implementations which already commit and finalize streams after each STATE message would not need to be altered.
 
 ### How are users affected by the change? (e.g. DB upgrade required?)
 
@@ -99,7 +101,7 @@ Guidance on how to handle SIGSTOP/SIGCONT use by users.
 
 ### Acknowledgements 
 
-...(if applicable)...
+- [@aaronsteers](https://github.com/aaronsteers)
 
 ## What defines this SIP as "done"?
 
