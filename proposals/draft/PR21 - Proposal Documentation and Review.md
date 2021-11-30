@@ -52,9 +52,11 @@ When your proposal is ready for review, change the status to "Ready for Review" 
 
 The working group will pick 1-3 topics each month to review from those in "Ready for Review" status. Once selected for review, update the doc status to "Reviewing" and enter the comment-by-date deadline here into the proposal document.
 
+Over the course of review, the working group members may add comments and suggestions to the pull request directly. The author may likewise update the proposal text to address any submitted feedback. Authors should update the "Date Updated" field in the doc whenever changes are applied.
+
 ### Phase 4: Approval or Non-Approval
 
-SIPs will be approved if consensus is gained from the majority of working group members - and if there are no "Strong No" votes from the working group leadership team.
+SIPs will be approved if consensus is gained from the majority of working group members. Each member company may vote "Strong Yes", "Yes", "No", or "Strong No". To be approved, a proposal requires a simple majority of "Strong Yes" or "Yes" votes from member companies and no "Strong No" votes from the working group leadership team.
 
 If the SIP is not approved, it will return to draft status and/or it may be replaced by a new or altered submission based on Working Group feedback.
 
