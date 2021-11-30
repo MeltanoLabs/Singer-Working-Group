@@ -21,7 +21,7 @@ We should document in the Singer Spec that Singer taps and targets expect **Draf
 
 ## Motivation
 
-As of the time of writing, the latest version of json schema is **Draft 07**. While most changes between spec drafts are backwards compatible, we should nevertheless document for users and developer which version of the spec they should expect to use for best compatibility.
+As of the time of writing, the latest version of json schema is **Draft 2020-12**. While most changes between spec drafts are backwards compatible, we should nevertheless document for users and developer which version of the spec they should expect to use for best compatibility.
 
 ### Which layer(s) of the Singer ecosystem does this proposal directly touch?
 
