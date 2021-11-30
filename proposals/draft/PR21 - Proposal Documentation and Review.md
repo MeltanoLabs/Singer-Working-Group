@@ -2,12 +2,11 @@
 
 ## Proposal Status
 
-| header | header |
+| Status | _Ready for Review_ |
 | ------ | ------ |
-| State | Ready for Review |
-| Issue Link | (required link to issue) |
-| Discussion Thread(s) | (optional link) |
+| Issue Link | [#12](https://github.com/MeltanoLabs/Singer-Working-Group/issues/12) |
 | Created | 2021-09-27 |
+| Updated | 2021-11-30 |
 
 -----------------------
 
@@ -45,19 +44,15 @@ First, open an issue to confirm the idea is viable and has some interest from th
 
 ### Phase 2: Create the proposal doc
 
-When you are ready to draft the proposal, create a new branch starting with the issue number followed by a dash (`-`). Copy the [document template](../template.md) and fill out the proposal template.
+When you are ready to draft the proposal, create a new branch starting with the issue number followed by a dash (`-`). Copy the [document template](../template.md) and fill out the proposal template. Commit to your branch, push, and then open a new PR that links back to your original issue.
 
-Commit to your branch, push, and then open a new PR that links back to your original issue.
+When your proposal is ready for review, change the status to "Ready for Review" and post a note to the original issue.
 
-### Phase 3: Discussion and Comment Period
+### Phase 3: Review Period
 
-After the doc is created, start a new Discussion thread to request feedback. Cross link the discussion thread to your SIP proposal and vice versa. When your proposal is ready for review, change the status to "Ready for Review" and post a note to the original issue.
+The working group will pick 1-3 topics each month to review from those in "Ready for Review" status. Once selected for review, update the doc status to "Reviewing" and enter the comment-by-date deadline here into the proposal document.
 
-### Phase 4: Review Period
-
-The working group will pick 1-3 topics each month to review. Once selected for review, update the doc status to "Reviewing" and enter the comment-by-date deadline here in the form.
-
-### Phase 5: Approval or Non-Approval
+### Phase 4: Approval or Non-Approval
 
 SIPs will be approved if consensus is gained from the majority of working group members - and if there are no "Strong No" votes from the working group leadership team.
 
