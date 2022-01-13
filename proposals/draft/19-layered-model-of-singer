@@ -17,23 +17,29 @@ _This document follows the [Singer Improvement Proposal (SIP) process](./draft/P
 
 ### TL;DR Overview
 
-...(Summarize in a few sentences)...
+The Layered Model of Singer is a mechanism for organizing the mass collection of libraries, patterns, and practices that organizations using Singer and providing a means of discussing how these best practices fit into the overall ecosystem.
+
+In addition to categorization, its second goal is to enable structured conversation about how to move a practice between levels. For example, pulling a concept from a library and generalizing it as a widespread standard.
 
 ### What specific change do you propose to make?
 
-...(Detailed description)...
+This change is a document for the Singer Working Group as a meta-specification to provide guidelines for discussing proposed features to categorize a proposal and its components for discussion.
 
 ## Motivation
 
-...
+Singer is a lot of things aside from a JSON-line based data exchange protocol. It is a collection of tools, best practices, reserved metadata keywords, standard command-line arguments, web applications, orchestration tooling/practices, and more. A part of how this could evolve in this way is from the open-endedness of the original spec. Data extraction use cases vary by source, by runtime environment, by orchestration mechanism, etc. and those use cases generally cannot be anticipated up front.
+
+The motivation here is to help keep that simplicity by defining levels from a most generic level (Spec) to a most specific level (Framework/Application).
 
 ### What problem does it solve?
 
-...
+The problem it is solving is having a consistent language to discuss features and changes proposed in the Singer Working Group so that all participants can be sure that they are talking about the same thing.
 
 ### Why is it needed?
 
-...
+Having this sort of language to categorize pieces of a proposed change into varying degrees of specificity will allow proposals to be refined and keep use-case specific mechanisms out of lower levels.
+
+For example, if use-case specific details make their way into the over-the-wire JSON line Spec, this would end up pushing the protocol to become more complicated to write software that reads and writes (more conditions to handle), thus leading to a spread of logical bloat in those implementing the protocol.
 
 -----------------------
 
