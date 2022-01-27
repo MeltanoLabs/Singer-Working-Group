@@ -72,7 +72,7 @@ Notes:
 - The keys for partitioned stream bookmarks need to indicate the partition keys (e.g. `catalogs/shop_id=143`). Thus, order of the keys must be deterministic.
 - A flat object like this is the most straightforward to merge.
 
-In the following examples, the stream hierarchy `shops` > `catalogs` > `products` is synced from an API. The bookmark value of a catalog might be change from one to another, so it's necessary to store one `catalogs` bookmark for each `shop_id`. Similarly, `products` require a `shop_id` and `catalog_id`.
+In the following examples, the stream hierarchy `shops` > `catalogs` > `products` is synced from an API. The bookmark value of a catalog might change from one to another, so it's necessary to store one `catalogs` bookmark for each `shop_id`. Similarly, `products` require a `shop_id` and `catalog_id`.
 
 #### Example valid state objects
 
