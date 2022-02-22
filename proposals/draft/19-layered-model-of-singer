@@ -55,7 +55,7 @@ Some principles of features here:
 - Focus on the std-out portions of using Singer (serialization format, message types, required keys for messages, etc.)
 
 #### Layer 2: Standards
-The pieces that systems using Singer can rely on such as catalogs and discovery mode. These pieces required to implement to be considered as up to modern standards for Singer. Not implementing these is not an incompatibility, but all Singer actors should strive to implement the standards. The standards are more focused upon Singer actors themselves themselves (e.g., taps, targets), as opposed to the over-the-wire protocol at the heart of Singer. Some tooling that rely on these standards may not function if an actor does not implement it.
+The pieces that systems using Singer can rely on such as catalogs and discovery mode. These pieces required to implement to be considered as up to modern standards for Singer. Not implementing these is not an incompatibility, but all Singer actors should strive to implement the standards. The standards are more focused upon Singer actors themselves (e.g., taps, targets), as opposed to the over-the-wire protocol at the heart of Singer. Some tooling that rely on these standards may not function if an actor does not implement it.
 
 Conceptually, this includes things like Command-Line Arguments, Catalog, Metadata Keys/Custom Metadata, Standard State Keys, etc.
 
@@ -81,14 +81,15 @@ Principles:
 - These influence the way that code is written for their specific language
 
 ### Layer 5: Tooling/Orchestration/UX/Infrastructure
-This is the bread and butter of organizations that adopt singer. As far as standards go, this is not generally something that will be voted upon by the Singer communicty as a whole. Instead, this is the state that all proprietary code falls in and the specific product offerings of practitioners fit. Nothing in this space is expected to be open source, but the option is there for things that may qualify for best practices.
+This is the bread and butter of organizations that adopt Singer. As far as standards go, this is not generally something that will be voted upon by the Singer community as a whole. Instead, this is the state that all proprietary code falls in and the specific product offerings of practitioners fit. Nothing in this space is expected to be open source, but the option is there for things that may qualify for best practices.
 
 This layer can be considered an analog to the "Application Layer" of the OSI layered model of networking.
 
 Principles:
 - Specific to a particular vertical or market space
 - Specific to a single ops approach for deployment or other closer-to-the-metal conecerns
-- Not generalizable without either losing value in the source product
+- Not generalizable
+- May not be a candidate for open sourcing
 
 -----------------------
 
