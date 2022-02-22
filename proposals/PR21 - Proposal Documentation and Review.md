@@ -85,7 +85,7 @@ Votes from all Member Companies are scored, but only votes from Leading Members 
 |--|--|--|
 | "Strong Yes" | `+1.0` | `+0.01` |
 | "Yes" | `+1.0` | `+0.01` |
-| "No" | `-1.0` | `-0.01` |
+| "No" | `-2.0` | `-0.01` |
 | "Strong No" | `-2.5` | `-0.01` |
 
 After summing the value of all qualified votes, and after the voting period has passed:
