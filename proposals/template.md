@@ -58,7 +58,7 @@ Select all that apply:
 - [x] **Singer Working Group - practices and procedures**
 - [ ] Singer documentation (Other)
 
-### Are there any downsides to this change?
+### What are the downsides to this change, if any?
 
 ...
 
