@@ -30,4 +30,4 @@ Leading Members are expected to:
 
 In general, we are open to accepting any company into our group which is similarly committed to the success of the Singer spec and the Singer community.
 
-New membership invites may proposed by way of nomination internally. Any existing Member Company may nominate a company to be invited, subject to approval by majority vote from the Leading Members.
+New membership invites may be proposed by way of nomination internally. Any existing Member Company may nominate a company to be invited, subject to approval by majority vote from the Leading Members.
