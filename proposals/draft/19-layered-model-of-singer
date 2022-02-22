@@ -130,7 +130,7 @@ A purely free approach to extension proposals has been explicitly excluded by th
 
 ### Acknowledgements
 
-Thank you to Taylor Murhy and Aaron Steers from Meltano for engaging with the initial Issue associated with this idea and helping me develop it conceptually over the past months.
+Thank you to Taylor Murphy and Aaron Steers from Meltano for engaging with the [initial Issue](https://github.com/MeltanoLabs/Singer-Working-Group/issues/19) associated with this idea and helping me develop it conceptually over the past months.
 
 ### What defines this SIP as "done"?
 
