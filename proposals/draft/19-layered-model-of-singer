@@ -1,0 +1,138 @@
+# SIP #`<TBD>` - Layered Model of Singer
+
+_This document follows the [Singer Improvement Proposal (SIP) process](./draft/PR21%20-%20Proposal%20Documentation%20and%20Review.md)_
+
+## Proposal Status
+
+| header | header |
+| ------ | ------ |
+| State | Draft |
+| Issue Link | [#19](https://github.com/MeltanoLabs/Singer-Working-Group/issues/19) |
+| Created | 2022-01-13 |
+| Updated | 2022-02-18 |
+
+-----------------------
+
+## I. Proposal Summary
+
+### TL;DR Overview
+
+The Layered Model of Singer is a mechanism for organizing the mass collection of libraries, patterns, and practices that organizations using Singer rely on and providing a means of categorizing how these best practices fit into the overall ecosystem.
+
+In addition to categorization, its second goal is to enable a structured conversation about how to move a practice between levels. For example, pulling a concept from a library and generalizing it as a widespread standard.
+
+### What specific change do you propose to make?
+
+This change is a document for the Singer Working Group as a meta-specification to provide guidelines for discussing proposed features to categorize a proposal and its components for discussion.
+
+## Motivation
+
+Singer is a lot of things aside from a JSON-line based data exchange protocol. It is a collection of tools, best practices, reserved metadata keywords, standard command-line arguments, web applications, orchestration tooling/practices, and more. A part of how this was able to evolve in this way is from the open-endedness of the underlying spec. Data extraction use cases vary by source, by runtime environment, by orchestration mechanism, etc. and those use cases generally cannot be anticipated up front.
+
+The motivation here is to help keep that simplicity by defining levels from a most generic level (Spec) to a most specific level (Framework/Application).
+
+### What problem does it solve?
+
+The problem it is solving is having a consistent language to discuss features and changes proposed in the Singer Working Group so that all participants can be sure that they are talking about the same thing.
+
+### Why is it needed?
+
+Having this sort of language to categorize pieces of a proposed change into varying degrees of specificity will allow proposals to be refined and keep use-case specific mechanisms out of lower levels. The hope is that this sort of framework will encourage innovation at the top end of the hierarchy and promote conversation to bring the parts that map to a true generic data protocol down towards the spec level as practicioners adopt those pieces and work them thoroughly in their own data space.
+
+-----------------------
+
+## II. Proposal Details
+
+### The Layered Model of Singer
+
+Looking at Singer, there are a lot of design choices baked in around a core value of simplicity. The reasoning for this has always been to give developers the freedom and flexibility to make it what they want, since all data sources are vastly different, and one cannot effectively design for all future cases in the ELT space. As discussed in the motivation of this SIP, organizing layers of the Singer ecosystem can provide the language necessary for the disparate organizations using Singer to propose and categorize the things that work for them and enable a wider conversation towards wider spread adoption.
+
+#### Layer 1: Specification
+This is the specification itself, which is purely a JSON protocol for transmitting data over the wire.
+
+Some principles of features here:
+- Language agnostic, implementation independent, and generic regardless of use case.
+- Focus on the std-out portions of using Singer (serialization format, message types, required keys for messages, etc.)
+
+#### Layer 2: Standards
+The pieces that systems using Singer can rely on such as catalogs and discovery mode. These pieces required to implement to be considered as up to modern standards for Singer. Not implementing these is not an incompatibility, but all Singer actors should strive to implement the standards. The standards are more focused upon Singer actors themselves (e.g., taps, targets), as opposed to the over-the-wire protocol at the heart of Singer. Some tooling that rely on these standards may not function if an actor does not implement it.
+
+Conceptually, this includes things like Command-Line Arguments, Catalog, Metadata Keys/Custom Metadata, Standard State Keys, etc.
+
+Some principles here:
+- Language agnostic, implementation specific, and generic regardless of use case
+- They help standardize the nitty-gritty to make writing frameworks and libraries easier
+
+#### Layer 3: Best Practices
+
+This is the set of things that Singer practicioners have figured out work in their space, but aren't sure whether they are globally generic or not yet. These best practices are generally not required, but are things that have been used as ways to make it easier to build taps.
+
+Some principles here:
+- Language agnostic, implementation specific, and use case specific.
+- These items are candidates for lower levels of the ecosystem, but maybe are not quite yet standards (i.e., are not at the level that they can be considered required)
+- They strive to make code more portable, readable, and usable for users and devs alike in a structural sense
+
+### Layer 4: Libraries and Frameworks
+This is where we get into the language specific stuff. Libraries like `singer-python` and/or `singer-clojure` or frameworks like the Meltano SDK take the standards plus best practices and encode them in a way that makes sense for the patterns of each language. This is also a good place to be a test bed for things that might become standards.
+
+Principles:
+- Language specific
+- Generic use cases
+- These influence the way that code is written for their specific language
+
+### Layer 5: Tooling/Orchestration/UX/Infrastructure
+This is the bread and butter of organizations that adopt Singer. As far as standards go, this is not generally something that will be voted upon by the Singer community as a whole. Instead, this is the state that all proprietary code falls in and the specific product offerings of practitioners fit. Nothing in this space is expected to be open source, but the option is there for things that may qualify for best practices.
+
+This layer can be considered an analog to the "Application Layer" of the OSI layered model of networking.
+
+Principles:
+- Specific to a particular vertical or market space
+- Specific to a single ops approach for deployment or other closer-to-the-metal conecerns
+- Not generalizable
+- May not be a candidate for open sourcing
+
+-----------------------
+
+## III. Additional Information
+
+### Which layer(s) of the Singer ecosystem does this proposal directly touch?
+
+Select all that apply:
+
+- [ ] Singer Specification - required capabilities and behaviors
+- [ ] Singer Specification - optional capabilities and behaviors
+- [ ] Singer best practices and other guidance
+- [x] **Singer Working Group - practices and procedures**
+- [ ] Singer documentation (Other)
+
+### Are there any downsides to this change?
+
+There are certainly downsides to this change. Directing the conversation with a categorical model is very important to consider. There are potentially nuances that are not yet considered that must be accounted for in this proposal, but the author intends that those pieces can be amended to clarify as they come out of working together.
+
+### Is the change backwards compatible?
+
+There is nothing to be backwards comptible with. This is a first language proposal of this mechanism purely for the Working Group's consideration.
+
+### How are Singer developers affected by the change (if applicable)?
+
+Hopefully not at all unless there is a good reason to. A primary goal of this is to only require things that are truly worthwhile to implement for the general Singer world as a whole.
+
+### How are Singer users affected by the change? (if applicable)?
+
+Singer users should be able to utilize this language as well to evaluate things that claim to implement the Singer best practices.
+
+### Future Plans
+
+The future plans for this proposal are that the Working Group will continue to iterate upon it and come to truly beneficial categorizations that advance the world of data as a whole.
+
+### Excluded Alternatives
+
+A purely free approach to extension proposals has been explicitly excluded by this. An entirely bottom-up approach isn't compatible with this sort of structure.
+
+### Acknowledgements
+
+Thank you to Taylor Murphy and Aaron Steers from Meltano for engaging with the [initial Issue](https://github.com/MeltanoLabs/Singer-Working-Group/issues/19) associated with this idea and helping me develop it conceptually over the past months.
+
+### What defines this SIP as "done"?
+
+Purely adoption by the Singer Working group as an operational practice would consider this proposal as Done.
