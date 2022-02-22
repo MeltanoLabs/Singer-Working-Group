@@ -73,7 +73,7 @@ Some principles here:
 - They strive to make code more portable, readable, and usable for users and devs alike in a structural sense
 
 ### Layer 4: Libraries and Frameworks
-This is where we get into the language specific stuff. Libraries like `singer-python` and/or `singer-clojure` or frameworks like the MeltanoSDK take the standards plus best practices and encode them in a way that makes sense for the patterns of each language. This is also a good place to be a test bed for things that might become standards.
+This is where we get into the language specific stuff. Libraries like `singer-python` and/or `singer-clojure` or frameworks like the Meltano SDK take the standards plus best practices and encode them in a way that makes sense for the patterns of each language. This is also a good place to be a test bed for things that might become standards.
 
 Principles:
 - Language specific
