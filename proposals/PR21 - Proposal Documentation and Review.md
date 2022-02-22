@@ -93,7 +93,7 @@ After summing the value of all qualified votes, and after the voting period has 
 - Scores `>=1.0`: `Approved`
 - Scores `<1.0`: `Not Approved`
 
-Note that with 3 Leading Member Companies, a "Strong No" from a Leading Member is essentially a veto vote. If a Leading Member does not want to approve but also does not want to veto, then a simple "No" vote may be logged. In that scenario, the proposal will then be approved only if both other Leading Members vote "Yes".
+Note that with 3 Leading Member Companies, a "Strong No" from a Leading Member is essentially a veto vote. If a Leading Member does not want to approve but also does not want to veto, then a simple "No" vote may be logged. In that scenario, the proposal will then be approved only if both other Leading Members vote "Yes" _and_ if "No" votes from other Members do not outweigh the Members' "Yes" votes. (The 'Other Members' votes are the tie breakers in this case.)
 
 ### Phase 5: Approval or Non-Approval
 
